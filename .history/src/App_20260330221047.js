@@ -9,7 +9,7 @@ import menuItems from './data/menuItems';
 import './App.css';
 import './components/MessageButton.js'
 import MessageButtons from './components/MessageButton.js';
-
+import logo from './logo.png';
 
 function App() {
   const [customerName, setCustomerName] = useState('');

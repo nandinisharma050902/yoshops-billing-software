@@ -10,7 +10,6 @@ import './App.css';
 import './components/MessageButton.js'
 import MessageButtons from './components/MessageButton.js';
 
-
 function App() {
   const [customerName, setCustomerName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');

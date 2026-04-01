@@ -14,28 +14,14 @@ const MenuInput = ({ quantities, handleQuantityChange }) => {
     <div key={item.name} className="menu-item">
       <label>{item.name} - Rs.{item.price}</label>
 
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        border: '1px solid #d1d5db',
-        borderRadius: '8px',
-        overflow: 'hidden',
-        boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
-      }}>
+      {/* ── Only this part changed ── */}
+      <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-sm">
         <button
           onClick={() => handleQuantityChange(item.name, Math.max(0, (quantities[item.name] || 0) - 1))}
-          style={{
-            padding: '4px 12px',
-            background: '#f3f4f6',
-            border: 'none',
-            borderRight: '1px solid #d1d5db',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}
+          className="px-3 py-1 bg-gray-100 hover:bg-gray-200 active:scale-95 transition"
         >
           -
         </button>
-
         <input
           type="number"
           min="0"
@@ -44,31 +30,16 @@ const MenuInput = ({ quantities, handleQuantityChange }) => {
             const parsed = parseInt(e.target.value, 10);
             handleQuantityChange(item.name, isNaN(parsed) || parsed < 0 ? 0 : parsed);
           }}
-          style={{
-            width: '56px',
-            textAlign: 'center',
-            outline: 'none',
-            border: 'none',
-            padding: '4px 0',
-            background: '#fff',
-            MozAppearance: 'textfield'
-          }}
+          className="w-14 text-center outline-none ml-"
         />
-
         <button
           onClick={() => handleQuantityChange(item.name, (quantities[item.name] || 0) + 1)}
-          style={{
-            padding: '4px 12px',
-            background: '#f3f4f6',
-            border: 'none',
-            borderLeft: '1px solid #d1d5db',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}
+          className="px-3 py-1 bg-gray-100 hover:bg-gray-200 active:scale-95 transition ml-2"
         >
           +
         </button>
       </div>
+      {/* ── End of change ── */}
 
     </div>
   );
