@@ -24,8 +24,7 @@ const renderItem = (item) => (
         borderRadius: '8px',
         objectFit: 'cover',
         flexShrink: 0,
-        border: '1px solid #e5e7eb',
-        marginRight: '12px'
+        border: '1px solid #e5e7eb'
       }}
     />
 
